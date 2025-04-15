@@ -1,313 +1,51 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mustafa Özdemir | CEO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 10px;
-    }
-    
-    .card {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      width: 100%;
-      max-width: 450px;
-      padding: 30px 25px;
-      margin: 0 auto;
-    }
-    
-    .avatar {
-      width: 100px;
-      height: 100px;
-      background-color: #f2f2f2;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .avatar svg {
-      width: 50px;
-      height: 50px;
-      color: #555;
-    }
-    
-    .name {
-      font-size: 28px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 5px;
-    }
-    
-    .title {
-      font-size: 20px;
-      font-weight: 500;
-      text-align: center;
-      color: #555;
-    }
-    
-    .company {
-      font-size: 20px;
-      font-weight: 500;
-      text-align: center;
-      color: #555;
-      margin-bottom: 30px;
-    }
-    
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-    }
-    
-    .contact-item svg {
-      width: 24px;
-      flex-shrink: 0;
-      margin-right: 10px;
-      margin-top: 3px;
-    }
-    
-    .contact-details {
-      max-width: calc(100% - 34px);
-      font-size: 15px;
-    }
-    
-    .contact-details a {
-      color: inherit;
-      text-decoration: none;
-      display: block;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    
-    .qr-button {
-      display: block;
-      width: 250px;
-      margin: 35px auto 0;
-      padding: 12px 20px;
-      background-color: #0077b5;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 16px;
-      cursor: pointer;
-      text-align: center;
-    }
-    
-    .qr-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .qr-container {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      text-align: center;
-    }
-    
-    .qr-container img {
-      width: 200px;
-      height: 200px;
-      margin-bottom: 15px;
-    }
-    
-    .close-btn {
-      padding: 8px 20px;
-      background: #f2f2f2;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: 500;
-    }
-    
-    /* Always maintain two columns on any screen */
-    @media (max-width: 480px) {
-      .card {
-        padding: 25px 15px;
-      }
-      
-      .name {
-        font-size: 24px;
-      }
-      
-      .title, .company {
-        font-size: 18px;
-      }
-      
-      .contact-grid {
-        gap: 15px;
-      }
-      
-      .contact-details {
-        font-size: 13px;
-      }
-      
-      .qr-button {
-        width: 100%;
-        margin-top: 25px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="avatar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <circle cx="12" cy="8" r="4.5"/>
-        <path d="M20 19v1a1 1 0 01-1 1H5a1 1 0 01-1-1v-1a6 6 0 016-6h4a6 6 0 016 6z"/>
-      </svg>
-    </div>
-    
-    <h1 class="name">Mustafa Özdemir</h1>
-    <h2 class="title">CEO</h2>
-    <div class="company">Lala Teknoloji A.Ş.</div>
-    
-    <div class="contact-grid">
-      <!-- Email -->
-      <div class="contact-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-        </svg>
-        <div class="contact-details">
-          <a href="mailto:info.muhammedozdemir@gmail.com" title="info.muhammedozdemir@gmail.com">
-            mustafa@example.com
-          </a>
-        </div>
-      </div>
-      
-      <!-- Phone -->
-      <div class="contact-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-        </svg>
-        <div class="contact-details">
-          <a href="tel:+905339450346">+90 533 945 03 46</a>
-        </div>
-      </div>
-      
-      <!-- Website -->
-      <div class="contact-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-        </svg>
-        <div class="contact-details">
-          <a href="https://www.lala.com" target="_blank">www.lala.com</a>
-        </div>
-      </div>
-      
-      <!-- LinkedIn -->
-      <div class="contact-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
-          <rect x="2" y="9" width="4" height="12"/>
-          <circle cx="4" cy="4" r="2"/>
-        </svg>
-        <div class="contact-details">
-          <a href="https://linkedin.com/in/muhammedmustafaozdemir" target="_blank" title="linkedin.com/in/muhammedmustafaozdemir">
-            @muhammedmustafaozdemir
-          </a>
-        </div>
-      </div>
-      
-      <!-- Work Location -->
-      <div class="contact-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-          <circle cx="12" cy="10" r="3"/>
-        </svg>
-        <div class="contact-details">
-          <a href="https://maps.google.com/?q=Kağıthane,+İstanbul" target="_blank">
-            Kağıthane, İstanbul
-          </a>
-        </div>
-      </div>
-      
-      <!-- Instagram -->
-      <div class="contact-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="2" y="2" width="20" height="20" rx="5"/>
-          <circle cx="12" cy="12" r="3"/>
-          <circle cx="17.5" cy="6.5" r="1.5"/>
-        </svg>
-        <div class="contact-details">
-          <a href="https://instagram.com/ozdemiroglu2023" target="_blank">
-            @ozdemiroglu2023
-          </a>
-        </div>
-      </div>
-      
-      <!-- Home Location -->
-      <div class="contact-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-        <div class="contact-details">
-          <a href="https://maps.google.com/?q=Onikişubat,+Kahramanmaraş" target="_blank">
-            Onikişubat, Kahramanmaraş
-          </a>
-        </div>
-      </div>
-      
-      <!-- Twitter/X -->
-      <div class="contact-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
-        </svg>
-        <div class="contact-details">
-          <a href="https://x.com/mmozdemir101" target="_blank">
-            @mmozdemir101
-          </a>
-        </div>
-      </div>
-    </div>
-    
-    <button class="qr-button" onclick="document.getElementById('qrModal').style.display='flex'">
-      QR KODA TIKLA
-    </button>
+<!-- Work Location -->
+<div class="contact-item">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </svg>
+  <div class="contact-details">
+    <a href="https://maps.google.com/?q=Hamidiye,+Anadolu+Cd.+no:40,+34408,+34403+Kağıthane,+İstanbul" target="_blank">
+      Kağıthane, İstanbul
+    </a>
   </div>
+</div>
 
-  <!-- QR Modal -->
-  <div id="qrModal" class="qr-modal" onclick="this.style.display='none'">
-    <div class="qr-container" onclick="event.stopPropagation()">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://ozdemir1001.github.io/e-kartvizit/" alt="QR Kodu">
-      <p>Kartvizit QR Kodu</p>
-      <button class="close-btn" onclick="document.getElementById('qrModal').style.display='none'">Kapat</button>
-    </div>
+<!-- Instagram -->
+<div class="contact-item">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="2" y="2" width="20" height="20" rx="5"/>
+    <circle cx="12" cy="12" r="3"/>
+    <circle cx="17.5" cy="6.5" r="1.5"/>
+  </svg>
+  <div class="contact-details">
+    <a href="https://instagram.com/ozdemiroglu2023" target="_blank">
+      @ozdemiroglu2023
+    </a>
   </div>
-</body>
-</html>
+</div>
+
+<!-- Home Location -->
+<div class="contact-item">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+    <polyline points="9 22 9 12 15 12 15 22"/>
+  </svg>
+  <div class="contact-details">
+    <a href="https://maps.google.com/?q=Şazi+Bey,+Haydar+Aliyev+Blv.+No:3,+46040+Onikişubat,+Kahramanmaraş" target="_blank">
+      Onikişubat, Kahramanmaraş
+    </a>
+  </div>
+</div>
+
+<!-- Twitter/X -->
+<div class="contact-item">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+  </svg>
+  <div class="contact-details">
+    <a href="https://x.com/mmozdemir101" target="_blank">
+      @mmozdemir101
+    </a>
+  </div>
+</div>
