@@ -14,7 +14,7 @@
       font-family: 'Inter', sans-serif;
     }
     body {
-      background-color: #f7f9fc;
+      background-color: #fefefb;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -22,38 +22,42 @@
     }
     .card {
       background-color: #ffffff;
-      width: 360px;
+      width: 400px;
       padding: 24px;
-      border-radius: 24px;
+      border-radius: 20px;
       box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
       text-align: center;
     }
     .avatar {
-      width: 96px;
-      height: 96px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       background-color: #e0e0e0;
       margin: 0 auto 16px;
     }
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 800;
       margin-bottom: 4px;
     }
     h2 {
       font-size: 1rem;
       font-weight: 600;
-      color: #666;
+      color: #444;
       margin-bottom: 16px;
     }
     .info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       text-align: left;
-      margin-top: 16px;
+      margin-top: 24px;
     }
     .info-item {
       display: flex;
       align-items: center;
-      margin-bottom: 12px;
+      width: 48%;
+      margin-bottom: 16px;
       font-size: 0.95rem;
       color: #333;
     }
@@ -62,18 +66,40 @@
       margin-right: 12px;
       color: #555;
     }
-    .qr-container {
-      margin-top: 24px;
-      padding-top: 16px;
-      border-top: 1px solid #eee;
-    }
-    .qr-container img {
-      width: 100px;
-      height: 100px;
-    }
     a {
       color: #0077b5;
       text-decoration: none;
+    }
+    .qr-button {
+      display: block;
+      margin: 24px auto 0;
+      padding: 10px 20px;
+      background-color: #0077b5;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .qr-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .qr-content {
+      background: #fff;
+      padding: 24px;
+      border-radius: 16px;
+      text-align: center;
+    }
+    .qr-content img {
+      width: 150px;
+      height: 150px;
     }
   </style>
 </head>
@@ -81,21 +107,10 @@
   <div class="card">
     <div class="avatar"></div>
     <h1>Mustafa Özdemir</h1>
-    <h2>CEO - Lala Teknoloji A.Ş.</h2>
+    <h2>CEO<br>Lala Teknoloji A.Ş.</h2>
+
     <div class="info">
-      <div class="info-item"><i class="fas fa-envelope"></i> mustafa@example.com</div>
-      <div class="info-item"><i class="fas fa-phone"></i> +90 533 XXX XX XX</div>
-      <div class="info-item"><i class="fas fa-globe"></i> <a href="https://www.lala.com" target="_blank">www.lala.com</a></div>
-      <div class="info-item"><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/mustafaozdemir" target="_blank">linkedin.com/in/mustafaozdemir</a></div>
-      <div class="info-item"><i class="fab fa-instagram"></i> <a href="https://instagram.com/mustafaozdemir" target="_blank">@mustafaozdemir</a></div>
-      <div class="info-item"><i class="fab fa-x-twitter"></i> <a href="https://x.com/mustafaozdemir" target="_blank">@mustafaozdemir</a></div>
-      <div class="info-item"><i class="fas fa-briefcase"></i> İş Adresi: [Adres bilgisi]</div>
-      <div class="info-item"><i class="fas fa-home"></i> Ev Adresi: [Ev adresi]</div>
-    </div>
-    <div class="qr-container">
-      <p>QR kodu tarayarak kartvizitimi görüntüleyin:</p>
-      <img src="qrcode-placeholder.png" alt="QR Code">
-    </div>
-  </div>
-</body>
-</html>
+      <div class="info-item"><i class="fas fa-envelope"></i> mustafa@exampple.com</div>
+      <div class="info-item"><i class="fas fa-phone"></i> +90 533 XXX XX X</div>
+      <div class="info-item"><i class="fas fa-globe"></i> www.lala.com</div>
+      <div class="info-item"><i class="fab fa-linkedin"></i> linkedin.com/i/m
