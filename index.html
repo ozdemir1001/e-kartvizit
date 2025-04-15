@@ -4,154 +4,291 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mustafa Özdemir | CEO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
       font-family: 'Inter', sans-serif;
-      background-color: #fefefb;
+      background-color: #fafafa;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 20px;
+      padding: 16px;
     }
-    .card {
+    
+    .card-container {
       background: white;
-      padding: 32px;
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       width: 100%;
-      max-width: 720px;
-      text-align: center;
+      max-width: 450px;
+      padding: 40px 30px;
+      margin: 0 auto;
     }
+    
     .avatar {
       width: 80px;
       height: 80px;
-      background-color: #ddd;
+      background-color: #f2f2f2;
       border-radius: 50%;
-      margin: 0 auto 16px;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    h1 {
-      font-size: 1.5rem;
+    
+    .avatar-icon {
+      width: 40px;
+      height: 40px;
+      color: #444;
+    }
+    
+    .name {
+      font-size: 24px;
       font-weight: 700;
+      text-align: center;
+      color: #222;
       margin-bottom: 4px;
     }
-    h2 {
-      font-size: 1rem;
+    
+    .title {
+      font-size: 18px;
       font-weight: 500;
-      color: #666;
-      margin-bottom: 16px;
+      text-align: center;
+      color: #444;
+      margin-bottom: 4px;
     }
+    
+    .company {
+      font-size: 18px;
+      font-weight: 500;
+      text-align: center;
+      color: #444;
+      margin-bottom: 32px;
+    }
+    
     .info-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 20px;
-      text-align: left;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+      row-gap: 24px;
     }
-    .info-row {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    
     .info-item {
       display: flex;
       align-items: center;
-      font-size: 0.95rem;
-      color: #333;
-      width: 48%;
-      word-break: break-word;
     }
-    .info-item i {
+    
+    .icon {
       min-width: 24px;
-      margin-right: 8px;
-      color: #444;
-    }
-    a {
+      width: 24px;
+      margin-right: 12px;
       color: #333;
+    }
+    
+    .info-text {
+      font-size: 15px;
+      color: #333;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    a {
+      color: inherit;
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
-    }
+    
     .qr-button {
-      margin-top: 24px;
-      padding: 10px 20px;
+      display: block;
+      width: max-content;
+      margin: 40px auto 0;
+      padding: 12px 30px;
       background-color: #0077b5;
       color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 6px;
       font-weight: 600;
+      font-size: 16px;
       cursor: pointer;
+      text-transform: uppercase;
     }
+    
     .qr-modal {
       display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.6);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      z-index: 100;
       justify-content: center;
       align-items: center;
     }
-    .qr-content {
-      background: #fff;
+    
+    .qr-modal-content {
+      background-color: white;
       padding: 24px;
-      border-radius: 16px;
+      border-radius: 12px;
       text-align: center;
     }
-    .qr-content img {
-      width: 150px;
-      height: 150px;
+    
+    .qr-modal-content img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 16px;
     }
-
+    
+    .close-button {
+      background-color: #f2f2f2;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    
+    /* Media query for mobile devices */
     @media (max-width: 600px) {
-      .info-row {
-        flex-direction: column;
-        gap: 6px;
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
-      .info-item {
+      
+      .card-container {
+        padding: 30px 20px;
+      }
+      
+      .qr-button {
         width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="avatar"></div>
-    <h1>Mustafa Özdemir</h1>
-    <h2>CEO<br>Lala Teknoloji A.Ş.</h2>
-
+  <div class="card-container">
+    <div class="avatar">
+      <svg class="avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="8" r="4.5"/>
+        <path d="M20 19v1a1 1 0 01-1 1H5a1 1 0 01-1-1v-1a6 6 0 016-6h4a6 6 0 016 6z"/>
+      </svg>
+    </div>
+    
+    <h1 class="name">Mustafa Özdemir</h1>
+    <h2 class="title">CEO</h2>
+    <div class="company">Lala Teknoloji A.Ş.</div>
+    
     <div class="info-grid">
-      <div class="info-row">
-        <div class="info-item"><i class="fas fa-envelope"></i><a href="mailto:info.muhammedozdemir@gmail.com">info.muhammedozdemir@gmail.com</a></div>
-        <div class="info-item"><i class="fas fa-phone"></i><a href="tel:+905339450346">+90 533 945 03 46</a></div>
+      <div class="info-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M22 7L12 14L2 7"/>
+        </svg>
+        <span class="info-text">
+          <a href="mailto:info.muhammedozdemir@gmail.com">mustafa@example.com</a>
+        </span>
       </div>
-      <div class="info-row">
-        <div class="info-item"><i class="fas fa-globe"></i><a href="https://www.ozdemir.com" target="_blank">www.ozdemir.com</a></div>
-        <div class="info-item"><i class="fab fa-linkedin"></i><a href="https://linkedin.com/in/muhammedmustafaozdemir" target="_blank">@muhammedmustafaozdemir</a></div>
+      
+      <div class="info-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        <span class="info-text">
+          <a href="tel:+905339450346">+90 533 945 03 46</a>
+        </span>
       </div>
-      <div class="info-row">
-        <div class="info-item"><i class="fas fa-map-marker-alt"></i><a href="https://maps.google.com/?q=Kağıthane, İstanbul" target="_blank">Kağıthane, İstanbul</a></div>
-        <div class="info-item"><i class="fab fa-instagram"></i><a href="https://instagram.com/ozdemiroglu2023" target="_blank">@ozdemiroglu2023</a></div>
+      
+      <div class="info-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+        </svg>
+        <span class="info-text">
+          <a href="https://www.lala.com" target="_blank">www.lala.com</a>
+        </span>
       </div>
-      <div class="info-row">
-        <div class="info-item"><i class="fas fa-home"></i><a href="https://maps.google.com/?q=Onikişubat, Kahramanmaraş" target="_blank">Onikişubat, Kahramanmaraş</a></div>
-        <div class="info-item"><i class="fab fa-x-twitter"></i><a href="https://x.com/mmozdemir101" target="_blank">@mmozdemir101</a></div>
+      
+      <div class="info-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+        <span class="info-text">
+          <a href="https://linkedin.com/in/mustafaozdemir" target="_blank">linkedin.com/in/mustafaozdemir</a>
+        </span>
+      </div>
+      
+      <div class="info-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span class="info-text">
+          <a href="https://maps.google.com/?q=İş+adresi" target="_blank">İş adresi</a>
+        </span>
+      </div>
+      
+      <div class="info-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="3"/>
+          <circle cx="17.5" cy="6.5" r="1.5"/>
+        </svg>
+        <span class="info-text">
+          <a href="https://instagram.com/mustafaozdemir" target="_blank">instagram/mustafaozdemir</a>
+        </span>
+      </div>
+      
+      <div class="info-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span class="info-text">
+          <a href="https://maps.google.com/?q=Ev+adresi" target="_blank">Ev adresi</a>
+        </span>
+      </div>
+      
+      <div class="info-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+        </svg>
+        <span class="info-text">
+          <a href="https://x.com/mustafaozdemir" target="_blank">x.com/mustafaozdemir</a>
+        </span>
       </div>
     </div>
-
-    <button class="qr-button" onclick="document.getElementById('qr').style.display='flex'">QR KODA TIKLA</button>
+    
+    <button class="qr-button" onclick="document.getElementById('qrModal').style.display='flex'">QR KODA TIKLA</button>
   </div>
 
-  <div class="qr-modal" id="qr" onclick="this.style.display='none'">
-    <div class="qr-content">
-      <p>Kartvizit QR Kodu</p>
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ozdemir1001.github.io/e-kartvizit/" alt="QR Kodu">
+  <!-- QR Modal -->
+  <div id="qrModal" class="qr-modal" onclick="this.style.display='none'">
+    <div class="qr-modal-content" onclick="event.stopPropagation()">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://ozdemir1001.github.io/e-kartvizit/" alt="QR Kodu">
+      <p>Bu QR kodu mobil cihazınızla tarayın</p>
+      <button class="close-button" onclick="document.getElementById('qrModal').style.display='none'">Kapat</button>
     </div>
   </div>
+  
+  <script>
+    // Make sure text doesn't wrap to next line on small screens
+    window.onload = function() {
+      const infoItems = document.querySelectorAll('.info-text');
+      infoItems.forEach(item => {
+        item.style.overflow = 'hidden';
+        item.style.textOverflow = 'ellipsis';
+        item.style.whiteSpace = 'nowrap';
+      });
+    };
+  </script>
 </body>
 </html>
