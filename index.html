@@ -45,14 +45,15 @@
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px 8px;
+      gap: 8px 8px;
       margin-top: 20px;
     }
     .info-item {
       display: flex;
       align-items: center;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #333;
+      word-break: break-word;
     }
     .info-item i {
       width: 20px;
@@ -66,12 +67,35 @@
     a:hover {
       text-decoration: underline;
     }
-    .qr-code {
-      margin-top: 32px;
+    .qr-button {
+      margin-top: 24px;
+      padding: 10px 20px;
+      background-color: #0077b5;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
     }
-    .qr-code img {
-      width: 120px;
-      height: 120px;
+    .qr-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .qr-content {
+      background: #fff;
+      padding: 24px;
+      border-radius: 16px;
+      text-align: center;
+    }
+    .qr-content img {
+      width: 150px;
+      height: 150px;
     }
   </style>
 </head>
@@ -82,7 +106,6 @@
     <h2>CEO<br>Lala Teknoloji A.Ş.</h2>
 
     <div class="info-grid">
-      <!-- Sol Sütun -->
       <div class="info-item"><i class="fas fa-envelope"></i> <a href="mailto:info.muhammedozdemir@gmail.com">info.muhammedozdemir@gmail.com</a></div>
       <div class="info-item"><i class="fas fa-phone"></i> <a href="tel:+905339450346">+90 533 945 03 46</a></div>
       <div class="info-item"><i class="fas fa-globe"></i> <a href="https://www.ozdemir.com" target="_blank">www.ozdemir.com</a></div>
@@ -93,8 +116,12 @@
       <div class="info-item"><i class="fab fa-x-twitter"></i> <a href="https://x.com/mmozdemir101" target="_blank">@mmozdemir101</a></div>
     </div>
 
-    <div class="qr-code">
-      <p><strong>QR Kod</strong></p>
+    <button class="qr-button" onclick="document.getElementById('qr').style.display='flex'">QR KODA TIKLA</button>
+  </div>
+
+  <div class="qr-modal" id="qr" onclick="this.style.display='none'">
+    <div class="qr-content">
+      <p>Kartvizit QR Kodu</p>
       <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ozdemir1001.github.io/e-kartvizit/" alt="QR Kodu">
     </div>
   </div>
