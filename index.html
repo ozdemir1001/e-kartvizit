@@ -21,7 +21,7 @@
       padding: 32px;
       border-radius: 20px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      width: 420px;
+      width: 600px;
       text-align: center;
     }
     .avatar {
@@ -45,24 +45,26 @@
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px 8px;
+      gap: 16px 32px;
       margin-top: 20px;
     }
     .info-item {
       display: flex;
       align-items: center;
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       color: #333;
-      word-break: break-word;
+      white-space: nowrap;
     }
     .info-item i {
-      min-width: 18px;
-      margin-right: 8px;
+      min-width: 20px;
+      margin-right: 10px;
       color: #444;
     }
     a {
       color: #333;
       text-decoration: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     a:hover {
       text-decoration: underline;
@@ -106,14 +108,14 @@
     <h2>CEO<br>Lala Teknoloji A.Ş.</h2>
 
     <div class="info-grid">
-      <div class="info-item"><i class="fas fa-envelope"></i> <a href="mailto:info.muhammedozdemir@gmail.com">info.muhammedozdemir@gmail.com</a></div>
-      <div class="info-item"><i class="fas fa-phone"></i> <a href="tel:+905339450346">+90 533 945 03 46</a></div>
-      <div class="info-item"><i class="fas fa-globe"></i> <a href="https://www.ozdemir.com" target="_blank">www.ozdemir.com</a></div>
-      <div class="info-item"><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/muhammedmustafaozdemir" target="_blank">@muhammedmustafaozdemir</a></div>
-      <div class="info-item"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.google.com/?q=Hamidiye, Anadolu Cd. no:40, 34408, 34403 Kağıthane/İstanbul" target="_blank">Kağıthane, İstanbul</a></div>
-      <div class="info-item"><i class="fab fa-instagram"></i> <a href="https://instagram.com/ozdemiroglu2023" target="_blank">@ozdemiroglu2023</a></div>
-      <div class="info-item"><i class="fas fa-home"></i> <a href="https://maps.google.com/?q=Şazi Bey, Haydar Aliyev Blv. No:3, 46040 Onikişubat/Kahramanmaraş" target="_blank">Onikişubat, Kahramanmaraş</a></div>
-      <div class="info-item"><i class="fab fa-x-twitter"></i> <a href="https://x.com/mmozdemir101" target="_blank">@mmozdemir101</a></div>
+      <div class="info-item"><i class="fas fa-envelope"></i><a href="mailto:info.muhammedozdemir@gmail.com">info.muhammedozdemir@gmail.com</a></div>
+      <div class="info-item"><i class="fas fa-phone"></i><a href="tel:+905339450346">+90 533 945 03 46</a></div>
+      <div class="info-item"><i class="fas fa-globe"></i><a href="https://www.ozdemir.com" target="_blank">www.ozdemir.com</a></div>
+      <div class="info-item"><i class="fab fa-linkedin"></i><a href="https://linkedin.com/in/muhammedmustafaozdemir" target="_blank">@muhammedmustafaozdemir</a></div>
+      <div class="info-item"><i class="fas fa-map-marker-alt"></i><a href="https://maps.google.com/?q=Hamidiye, Anadolu Cd. no:40, 34408, 34403 Kağıthane/İstanbul" target="_blank">Kağıthane, İstanbul</a></div>
+      <div class="info-item"><i class="fab fa-instagram"></i><a href="https://instagram.com/ozdemiroglu2023" target="_blank">@ozdemiroglu2023</a></div>
+      <div class="info-item"><i class="fas fa-home"></i><a href="https://maps.google.com/?q=Şazi Bey, Haydar Aliyev Blv. No:3, 46040 Onikişubat/Kahramanmaraş" target="_blank">Onikişubat, Kahramanmaraş</a></div>
+      <div class="info-item"><i class="fab fa-x-twitter"></i><a href="https://x.com/mmozdemir101" target="_blank">@mmozdemir101</a></div>
     </div>
 
     <button class="qr-button" onclick="document.getElementById('qr').style.display='flex'">QR KODA TIKLA</button>
